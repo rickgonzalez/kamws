@@ -1,6 +1,6 @@
 
 
-import WebSocket from 'ws';
+import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
 export function createWebSocketServer() {
   const wss = new WebSocket.Server({ port: 8080 });
@@ -9,7 +9,7 @@ export function createWebSocketServer() {
     ws.on('message', (message) => {
       // Handle incoming messages
       console.log('Received:', message);
-      
+
 
     });
     ws.on('close', () => {
