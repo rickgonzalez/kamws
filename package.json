@@ -1,0 +1,19 @@
+{
+  "name": "kamws",
+  "version": "0.1.0",
+  "description": "test server",
+  "main": "server.js",
+  "scripts": {
+    "test": "kamwsTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "kamws"
+  },
+  "author": "Rickgonzalez",
+  "license": "ISC",
+  "dependencies": {
+    "websocket": "^1.0.34",
+    "ws": "^8.16.0"
+  }
+}
