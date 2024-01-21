@@ -2,7 +2,7 @@
   "name": "kamws",
   "version": "0.1.0",
   "description": "test server",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "kamwsTest"
   },
@@ -12,6 +12,7 @@
   },
   "author": "Rickgonzalez",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "websocket": "^1.0.34",
     "ws": "^8.16.0"
