@@ -3,6 +3,8 @@
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
 createWebSocketServer();
+
+
 export function createWebSocketServer() {
   //this may not be necessary
   const wss = new WebSocketServer({
@@ -25,6 +27,7 @@ export function createWebSocketServer() {
       concurrencyLimit: 10, // Limits zlib concurrency for perf.
       threshold: 1024 // Size (in bytes) below which messages
       // should not be compressed if context takeover is disabled.
+      //
     }
   });
 
