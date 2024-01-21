@@ -1,25 +1,25 @@
 
 
+import WebSocket from 'ws';
+let clients = [];
+export function createWebSocketServer() {
+  const wss = new WebSocket.Server({ port: 8080 });
+  wss.on('connection', (ws) => {
+    clients.push(ws);
+    ws.on('message', (message) => {
+      // Handle incoming messages
+      console.log('Received:', message);
+      
 
-import { WebSocketServer } from 'ws';
-
-const wss = new WebSocketServer({ port: 8080 });
-console.log((new Date()) + ' Server is listening on port 8080');
-
-wss.on('connection', function connection(ws) {
-  ws.on('message', function message(data) {
-    console.log('received: %s', data);
+    });
+    ws.on('close', () => {
+      // Remove closed connections from the clients list
+      clients = clients.filter((client) => client !== ws);
+    });
   });
 
-  ws.send('something');
-});
-
-
-
-
-
-
-
+  console.log('WebSocket server started on port 8080');
+}
 
 
 
