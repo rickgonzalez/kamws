@@ -2,6 +2,7 @@
 
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
+createWebSocketServer();
 export function createWebSocketServer() {
   //this may not be necessary
   const wss = new WebSocketServer({
