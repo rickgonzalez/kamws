@@ -35,10 +35,11 @@ export function createWebSocketServer() {
   wss.on('connection', (ws) => {
     clients.push(ws);
     console.log('adding connections to array')
+    
     ws.on('message', (message) => {
       // Handle incoming messages
       console.log('Received:', message);
-
+      //send to everyone else?
 
     });
     ws.on('close', () => {
