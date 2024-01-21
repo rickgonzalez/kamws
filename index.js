@@ -3,7 +3,7 @@
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
 export function createWebSocketServer() {
-  
+  //this may not be necessary
   const wss = new WebSocketServer({
     port: 8080,
     perMessageDeflate: {
