@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "kamwsTest",
-    "start": "nodemon ./app.js",
-    "prod": "nodemon ./app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +17,5 @@
   "dependencies": {
     "express": "^4.18.2",
     "ws": "^8.16.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.3"
   }
 }

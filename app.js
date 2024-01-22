@@ -3,29 +3,29 @@
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
 createWebSocketServer();
-const port = 3000
-import express from 'express';
-var app = express();
+// const port = 3000
+// import express from 'express';
+// var app = express();
 
-app.get('/', (req, res) => {
-  res.send('Basic server with websocket attempt');
-});
+// app.get('/', (req, res) => {
+//   res.send('Basic server with websocket attempt');
+// });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
 
-var server = app.listen(8081, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+// var server = app.listen(8081, function () {
+//   var host = server.address().address;
+//   var port = server.address().port;
 
-  console.log('my app is listening at http://%s:%s', host, port);
-});
+//   console.log('my app is listening at http://%s:%s', host, port);
+// });
 
 export function createWebSocketServer() {
   //this may not be necessary
   const wss = new WebSocketServer({
-    port: 8080,
+    port: 8081,
     perMessageDeflate: {
       zlibDeflateOptions: {
         // See zlib defaults.
