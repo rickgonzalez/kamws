@@ -3,21 +3,22 @@
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
 createWebSocketServer();
-// var express = require('express');
-// var app = express();
 
-// var options = {
-//   index: "coming-soon.html"
-// };
+import express from 'express';
+var app = express();
 
-// app.use('/', express.static('app', options));
+var options = {
+  index: "coming-soon.html"
+};
 
-// var server = app.listen(8081, function () {
-//   var host = server.address().address;
-//   var port = server.address().port;
+app.use('/', express.static('app', options));
 
-//   console.log('my app is listening at http://%s:%s', host, port);
-// });
+var server = app.listen(8081, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('my app is listening at http://%s:%s', host, port);
+});
 
 export function createWebSocketServer() {
   //this may not be necessary
@@ -123,4 +124,22 @@ export function createWebSocketServer() {
 //     connection.on('close', function(reasonCode, description) {
 //         console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
 //     });
+// });
+
+
+
+// var express = require('express');
+// var app = express();
+
+// var options = {
+//   index: "coming-soon.html"
+// };
+
+// app.use('/', express.static('app', options));
+
+// var server = app.listen(8081, function () {
+//   var host = server.address().address;
+//   var port = server.address().port;
+
+//   console.log('my app is listening at http://%s:%s', host, port);
 // });
