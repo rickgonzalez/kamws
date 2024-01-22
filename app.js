@@ -2,31 +2,31 @@
 
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
-//call the websocket
-createWebSocketServer();
-// const port = 3000
-// import express from 'express';
-// var app = express();
 
-// app.get('/', (req, res) => {
-//   res.send('Basic server with websocket attempt');
-// });
+//createWebSocketServer();
+const port = 3000
+import express from 'express';
+var app = express();
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+app.get('/', (req, res) => {
+  res.send('Basic server with websocket attempt');
+});
 
-// var server = app.listen(8081, function () {
-//   var host = server.address().address;
-//   var port = server.address().port;
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
-//   console.log('my app is listening at http://%s:%s', host, port);
-// });
+var server = app.listen(8081, function () {
+  var host = server.address().address;
+  var port = server.address().port;
 
-export function createWebSocketServer() {
+  console.log('my app is listening at http://%s:%s', host, port);
+});
+createWebSocketServer(8080);
+export function createWebSocketServer(myport) {
   //this may not be necessary
   const wss = new WebSocketServer({
-    port: 8081,
+    port: myport,
     perMessageDeflate: {
       zlibDeflateOptions: {
         // See zlib defaults.
@@ -58,6 +58,7 @@ export function createWebSocketServer() {
       // Handle incoming messages
       console.log('Received:', message);
       //send to everyone else?
+      ws.broadcast(message);
 
     });
     ws.on('close', () => {
