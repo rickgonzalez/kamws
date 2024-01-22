@@ -3,13 +3,17 @@
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
 createWebSocketServer();
-
+const port = 3000
 import express from 'express';
 var app = express();
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 var server = app.listen(8081, function () {
   var host = server.address().address;
