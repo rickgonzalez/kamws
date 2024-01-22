@@ -8,7 +8,7 @@ import express from 'express';
 var app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Basic server with websocket');
 });
 
 app.listen(port, () => {
