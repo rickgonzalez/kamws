@@ -1,0 +1,4 @@
+{
+    "script": "app.js",
+    "watch": ["app.js", "models/*.js", "routes/*.js"]
+  }
