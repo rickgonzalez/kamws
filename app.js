@@ -2,7 +2,7 @@
 
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
-
+//doesn't do a post build phase ! :/
 //createWebSocketServer();
 const port = 3000
 import express from 'express';
