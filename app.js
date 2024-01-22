@@ -2,6 +2,7 @@
 
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
+//call the websocket
 createWebSocketServer();
 // const port = 3000
 // import express from 'express';
