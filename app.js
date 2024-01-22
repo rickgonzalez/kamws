@@ -6,12 +6,10 @@ createWebSocketServer();
 
 import express from 'express';
 var app = express();
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
-var options = {
-  index: "coming-soon.html"
-};
-
-app.use('/', express.static('app', options));
 
 var server = app.listen(8081, function () {
   var host = server.address().address;
