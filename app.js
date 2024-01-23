@@ -2,8 +2,8 @@
 
 import WebSocket, { WebSocketServer } from 'ws';
 let clients = [];
-//doesn't do a post build phase ! :/
-//createWebSocketServer();
+
+createWebSocketServer(8080);
 const port = 3000
 import express from 'express';
 var app = express();
@@ -22,7 +22,7 @@ var server = app.listen(8081, function () {
 
   console.log('my app is listening at http://%s:%s', host, port);
 });
-createWebSocketServer(8080);
+
 export function createWebSocketServer(myport) {
   //this may not be necessary
   const wss = new WebSocketServer({
@@ -58,7 +58,7 @@ export function createWebSocketServer(myport) {
       // Handle incoming messages
       console.log('Received:', message);
       //send to everyone else?
-      ws.broadcast(message);
+     
 
     });
     ws.on('close', () => {
